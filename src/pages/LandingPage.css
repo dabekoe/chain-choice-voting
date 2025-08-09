@@ -1,0 +1,78 @@
+.landing-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe259 0%, #ffa751 50%, #43cea2 100%);
+  /* Ghana flag-inspired gradient */
+}
+
+.landing-card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  border-radius: 18px;
+  padding: 48px 36px;
+  text-align: center;
+  color: #1b3a1b;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  border: 2px solid rgba(255,255,255,0.25);
+  position: relative;
+}
+
+.landing-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #e3342f 0%, #fbbf24 50%, #10b981 100%);
+  /* Ghana flag color bar */
+}
+
+.landing-card h1 {
+  margin-bottom: 24px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #14532d;
+}
+
+.landing-card p {
+  margin-bottom: 28px;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.landing-card button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: none;
+  background: linear-gradient(90deg, #e3342f 0%, #fbbf24 50%, #10b981 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.12);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.landing-card button:hover {
+  background: linear-gradient(90deg, #10b981 0%, #fbbf24 50%, #e3342f 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .landing-card {
+    padding: 28px 10px;
+  }
+  .landing-card h1 {
+    font-size: 1.5rem;
+  }
+}
