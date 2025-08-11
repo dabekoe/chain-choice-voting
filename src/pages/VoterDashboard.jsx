@@ -54,6 +54,10 @@ export default function VoterDashboard() {
     }
   };
 
+  const handleViewResults = () => {
+    navigate('/results');
+  };
+
   // Filter to show only one Parliamentary Election card
   const uniqueElections = [];
   const seenTypes = new Set();
@@ -78,6 +82,15 @@ export default function VoterDashboard() {
             className="mt-4 md:mt-0 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold shadow transition"
           >
             Logout
+          </button>
+        </div>
+
+        <div className="flex justify-end mb-6">
+          <button
+            onClick={handleViewResults}
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold shadow transition"
+          >
+            View Results
           </button>
         </div>
 
@@ -132,9 +145,9 @@ export default function VoterDashboard() {
           </div>
         )}
       </div>
-      <div className="mt-8 text-center text-gray-400 text-xs">
-        &copy; {new Date().getFullYear()} National Online Voting System. All rights reserved.
-      </div>
-    </div>
-  );
-}
+            <div className="mt-8 text-center text-gray-400 text-xs">
+              &copy; {new Date().getFullYear()} National Online Voting System. All rights reserved.
+            </div>
+          </div>
+        );
+      }

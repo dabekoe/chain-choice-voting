@@ -1,7 +1,7 @@
-// src/pages/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ghanaFlag from '../assets/ghana-flag.png'; // Add a Ghana flag image in src/assets
+import symbolImage from '../assets/symbol.png'; // Place your symbol image in src/assets
 
 const Home = () => {
   return (
@@ -35,8 +35,16 @@ const Home = () => {
       <footer className="mt-8 text-gray-500 text-xs text-center">
         &copy; {new Date().getFullYear()} Ghana Electoral Commission. All rights reserved.
       </footer>
+      <div className="flex justify-center mt-8 mb-2">
+        <img
+          src={symbolImage}
+          alt="Symbol"
+          className="w-24 h-24 object-contain"
+          style={{ margin: '0 auto' }}
+        />
+      </div>
     </div>
-  );
-};
-
-export default Home;
+    );
+  };
+  
+  export default Home;

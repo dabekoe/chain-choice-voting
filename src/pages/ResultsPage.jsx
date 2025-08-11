@@ -16,6 +16,9 @@ const ResultsPage = () => {
   const [availableConstituencies, setAvailableConstituencies] = useState([]);
   const [viewGraph, setViewGraph] = useState(false);
 
+  // Check admin status from localStorage
+  const isAdmin = localStorage.getItem('isAdmin') === 'true';
+
   useEffect(() => {
     const fetchResults = async () => {
       try {
@@ -90,6 +93,9 @@ const ResultsPage = () => {
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <h2 className="text-2xl font-bold mb-6">Election Results</h2>
+      <p className="mb-4 text-gray-700">
+        View the results of both <b>Presidential</b> and <b>Parliamentary</b> elections. Use the filters below to select the type and constituency.
+      </p>
 
       {/* Filters */}
       <div className="mb-6 flex flex-wrap gap-4">
@@ -123,12 +129,17 @@ const ResultsPage = () => {
           {viewGraph ? 'View Table' : 'View Graph'}
         </button>
 
-        <button onClick={handleExportCSV} className="p-2 px-4 bg-green-600 text-white rounded">
-          Export CSV
-        </button>
-        <button onClick={handleExportPDF} className="p-2 px-4 bg-red-600 text-white rounded">
-          Export PDF
-        </button>
+        {/* Only show export buttons for admin */}
+        {isAdmin && (
+          <>
+            <button onClick={handleExportCSV} className="p-2 px-4 bg-green-600 text-white rounded">
+              Export CSV
+            </button>
+            <button onClick={handleExportPDF} className="p-2 px-4 bg-red-600 text-white rounded">
+              Export PDF
+            </button>
+          </>
+        )}
       </div>
 
       {/* Graph View */}
