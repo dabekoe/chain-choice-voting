@@ -21,7 +21,7 @@ const CandidatesPage = () => {
 
   const fetchCandidates = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/candidates');
+      const res = await axios.get('https://chain-choice-backend-1.onrender.com/api/candidates');
       setCandidates(res.data.candidates);
       setFilteredCandidates(res.data.candidates);
     } catch (err) {
@@ -79,7 +79,7 @@ const CandidatesPage = () => {
 
     try {
       if (editingId) {
-        await axios.put(`http://localhost:3000/api/candidates/${editingId}`, formData, {
+        await axios.put(`https://chain-choice-backend-1.onrender.com/api/candidates/${editingId}`, formData, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data'
@@ -87,7 +87,7 @@ const CandidatesPage = () => {
         });
         setEditingId(null);
       } else {
-        await axios.post('http://localhost:3000/api/candidates', formData, {
+        await axios.post('https://chain-choice-backend-1.onrender.com/api/candidates', formData, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data'
@@ -109,7 +109,7 @@ const CandidatesPage = () => {
   const handleDelete = async id => {
     if (!window.confirm('Are you sure you want to delete this candidate?')) return;
     try {
-      await axios.delete(`http://localhost:3000/api/candidates/${id}`, {
+      await axios.delete(`https://chain-choice-backend-1.onrender.com/api/candidates/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchCandidates();
@@ -197,7 +197,7 @@ const CandidatesPage = () => {
                 <div className="flex items-center gap-4">
                   {candidate.image && (
                     <img
-                      src={`http://localhost:3000${candidate.image}`}
+                      src={`https://chain-choice-backend-1.onrender.com${candidate.image}`}
                       alt={candidate.name}
                       className="w-20 h-20 object-cover border rounded"
                     />

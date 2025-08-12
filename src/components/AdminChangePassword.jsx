@@ -17,7 +17,7 @@ function AdminChangePassword({ token }) {
     setMessage('');
     setError('');
     try {
-      const res = await fetch('http://localhost:3000/api/admins/change-password', {
+      const res = await fetch('https://chain-choice-backend-1.onrender.com/api/admins/change-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

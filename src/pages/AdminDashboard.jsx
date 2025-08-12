@@ -20,7 +20,7 @@ export default function AdminDashboard() {
 
   const fetchAdmins = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/admins', {
+      const res = await axios.get('https://chain-choice-backend-1.onrender.com/api/admins', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAdmins(res.data);
@@ -43,7 +43,7 @@ export default function AdminDashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/admins', form, {
+      await axios.post('https://chain-choice-backend-1.onrender.com/api/admins', form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setForm({ email: '', password: '' });

@@ -74,7 +74,7 @@ export default function VotePage() {
                 >
                   {c.image && (
                     <img
-                      src={`http://localhost:3000${c.image}`}
+                      src={`https://chain-choice-backend-1.onrender.com${c.image}`}
                       alt={c.name}
                       className="w-20 h-20 object-cover rounded-full mb-2 border-4 border-white shadow"
                     />

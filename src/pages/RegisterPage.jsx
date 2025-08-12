@@ -31,7 +31,7 @@ function RegisterPage() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/voters/register', {
+      const response = await fetch('https://chain-choice-backend-1.onrender.com/api/voters/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ function RegisterPage() {
     setError('');
     setMessage('');
     try {
-      const response = await fetch('http://localhost:3000/api/voters/verify', {
+      const response = await fetch('https://chain-choice-backend-1.onrender.com/api/voters/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -181,7 +181,7 @@ const ResultsPage = () => {
                 <td className="py-2 px-4">{c.name}</td>
                 <td className="py-2 px-4 flex items-center space-x-2">
                   <img
-                    src={`http://localhost:3000/logos/${c.party.toUpperCase()}.png`}
+                    src={`https://chain-choice-backend-1.onrender.com/logos/${c.party.toUpperCase()}.png`}
                     alt={c.party}
                     className="w-6 h-6 object-contain"
                     onError={(e) => { e.target.style.display = 'none'; }}
